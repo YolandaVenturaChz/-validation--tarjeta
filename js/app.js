@@ -22,7 +22,25 @@ function isValidCard() {
                 }
                 /*Sumatoria de digitos*/
                 suma += digito;
+            } /*Si el módulo 10 de la suma es igual a cero*/
+            if (suma % 10 == 0) {
+                valid = true;
+                document.write('La tarjeta es valida');
             }
+            /**Si el módulo 10 de la suma es diferente a cero */
+            if (suma % 10 !== 0) {
+                validacion = false;
+                document.write('La tarjeta no es valida: Ingrese de nuevo');
+            }
+
+        } else {
+            alert('Verifique el número de su tarjeta\nIngrese mínimo 10 y máximo 16 dígitos')
         }
+    } else {
+        alert('Solo se puede ingresar números');
     }
+    return validacion;
+
+
 }
+isValidCard();
